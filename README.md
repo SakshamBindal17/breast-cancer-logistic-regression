@@ -74,32 +74,27 @@ model.fit(X_train_scaled, y_train)
 
 ### 6. Model Evaluation
 ```
-from sklearn.metrics import confusion_matrix, classification_report
-
 y_pred = model.predict(X_test_scaled)
 
-print(confusion_matrix(y_test, y_pred))
-print(classification_report(y_test, y_pred))
-```
-*Evaluated model performance.*
-
-### 7. Confusion Matrix Visualization and Report
-```
 import matplotlib.pyplot as plt
-from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
 
 cm = confusion_matrix(y_test, y_pred)
-disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=)
+
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=[0, 1])
 fig, ax = plt.subplots(figsize=(6, 6))
 disp.plot(ax=ax)
 plt.title('Confusion Matrix')
 plt.show()
+
+print("Classification Report:\n")
+print(classification_report(y_test, y_pred))
 ```
 ![Confusion Matrix](confusion_matrix.png)
 
-*Visualized confusion matrix.*
+*Evaluated model performance.*
 
-### 8. ROC Curve and AUC
+### 7. ROC Curve and AUC
 ```
 from sklearn.metrics import roc_curve, roc_auc_score
 import matplotlib.pyplot as plt
@@ -125,7 +120,7 @@ print(f"AUC (Area Under Curve): {auc:.4f}")
 
 *Analyzed model discrimination ability.*
 
-### 9. Probability Threshold Tuning
+### 8. Probability Threshold Tuning
 ```
 threshold = 0.5
 y_pred_custom = (y_proba >= threshold).astype(int)
