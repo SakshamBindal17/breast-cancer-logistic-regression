@@ -28,12 +28,16 @@ print(df['diagnosis'].value_counts())
 ```
 *Loaded the dataset, checked data types, and class distribution.*
 
+---
+
 ### 2. Data Cleaning
 ```
 df = df.drop(['id', 'Unnamed: 32'], axis=1)
 print(df.info())
 ```
 *Removed ID and empty columns.*
+
+---
 
 ### 3. Encoding Target Column
 Encode diagnosis: M=1, B=0
@@ -44,6 +48,8 @@ print(df['diagnosis'].value_counts())
 *Converted target to numeric.*
 
 [Updated Breat-Cancer-Dataset](Breast-Cancer-Cleaned.csv)
+
+---
 
 ### 4. Train-Test Split and Scaling
 ```
@@ -62,6 +68,8 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 *Split data and standardized features.*
+
+---
 
 ### 5. Model Training
 ```
@@ -94,6 +102,8 @@ print(classification_report(y_test, y_pred))
 
 *Evaluated model performance.*
 
+---
+
 ### 7. ROC Curve and AUC
 ```
 from sklearn.metrics import roc_curve, roc_auc_score
@@ -119,6 +129,8 @@ print(f"AUC (Area Under Curve): {auc:.4f}")
 ![ROC Curve](roc_curve.png)
 
 *Analyzed model discrimination ability.*
+
+---
 
 ### 8. Probability Threshold Tuning
 ```
