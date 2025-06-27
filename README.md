@@ -1,6 +1,7 @@
 # Breast Cancer Classification using Logistic Regression
 
 This project demonstrates a complete workflow for binary classification of breast cancer tumors as malignant or benign using logistic regression. It includes data preprocessing, model training, evaluation, ROC-AUC analysis, and threshold tuning.
+
 [Download the Housing Price Dataset](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
 
 ---
@@ -41,6 +42,7 @@ df['diagnosis'] = df['diagnosis'].map({'M': 1, 'B': 0})
 print(df['diagnosis'].value_counts())
 ```
 *Converted target to numeric.*
+
 [Updated Breat-Cancer-Dataset](Breast-Cancer-Cleaned.csv)
 
 ### 4. Train-Test Split and Scaling
@@ -93,6 +95,7 @@ disp.plot(ax=ax)
 plt.title('Confusion Matrix')
 plt.show()
 ```
+
 ![Confusion Matrix](confusion_matrix.png)
 *Visualized confusion matrix.*
 
@@ -118,6 +121,7 @@ plt.show()
 
 print(f"AUC (Area Under Curve): {auc:.4f}")
 ```
+
 ![ROC Curve](roc_curve.png)
 *Analyzed model discrimination ability.*
 
