@@ -95,8 +95,8 @@ disp.plot(ax=ax)
 plt.title('Confusion Matrix')
 plt.show()
 ```
-
 ![Confusion Matrix](confusion_matrix.png)
+
 *Visualized confusion matrix.*
 
 ### 8. ROC Curve and AUC
@@ -121,8 +121,8 @@ plt.show()
 
 print(f"AUC (Area Under Curve): {auc:.4f}")
 ```
-
 ![ROC Curve](roc_curve.png)
+
 *Analyzed model discrimination ability.*
 
 ### 9. Probability Threshold Tuning
